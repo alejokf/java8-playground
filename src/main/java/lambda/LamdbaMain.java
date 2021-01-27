@@ -1,13 +1,12 @@
 package lambda;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class LamdbaMain {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
         people.add(new Person("Alejandro", 35));
         people.add(new Person("John", 25));
