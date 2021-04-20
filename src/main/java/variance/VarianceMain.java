@@ -3,6 +3,8 @@ package variance;
 import java.util.ArrayList;
 import java.util.List;
 
+import lambda.Person;
+
 public class VarianceMain {
 
     public static void main(String[] args) {
@@ -31,5 +33,14 @@ public class VarianceMain {
         nonEmptyList.add(new NonEmpty(1, new Empty(), new Empty()));
         // This doesn't compile because Lists are not covariant in Java
         //List<IntSet> intSetList = nonEmptyList;
+
+        //This also happens when having a null in a list
+        List<Person> myList = new ArrayList<>();
+        myList.add(new Person("Alejo", 35));
+        myList.add(null);
+        Integer[] array = myList.toArray(new Integer[myList.size()]);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
     }
 }
